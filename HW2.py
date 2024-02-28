@@ -43,5 +43,3 @@ def bm(S, K, r, q, sigma, T, n, t = 0, isCall = True, isEuropean = True):
             return np.maximum(V_back, early), delta, gamma, vega, theta, rho
     else:
         return ValueError
-
-print(bm(100, 105, 0.05, 0, 0.4, 0.5, 4))
