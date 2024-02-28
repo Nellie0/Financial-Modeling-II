@@ -9,7 +9,7 @@ def bm(S, K, r, q, sigma, T, n, t = 0, isCall = True, isEuropean = True):
     p = (np.exp((r - q) * h)  - d) / (u - d)
 
     # Greeks for later
-    delta = HW1.delta(S, K, r, q, sigma, T, n)
+    delta = HW1.delta(S, K, r, q, sigma, T)
     gamma = HW1.gamma(S, K, r, q, sigma, T)
     vega = HW1.vega(S, K, r, q, sigma, T)
     theta = HW1.theta(S, K, r, q, sigma, T)
