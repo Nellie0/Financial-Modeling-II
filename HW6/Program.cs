@@ -504,6 +504,23 @@ namespace MyApp
                 // We only need to ask for base and index values if IsVanDerCorput is true
                 Console.WriteLine("Please input the base value for the Van der Corput sequence.");
                 van.BaseValue = Convert.ToInt32(Console.ReadLine());
+                // The base value should be a prime number
+                if (van.BaseValue == 1)
+                {
+                    throw new Exception("The base value must be a prime number.");
+                }
+                for (int i = 2; i<= Math.Ceiling(Math.Sqrt(van.BaseValue)); i++)
+                {
+                    if (van.BaseValue == 2)
+                    {
+                        break;
+                    }
+                    if (van.BaseValue % i == 0)
+                    {
+                        throw new Exception("The base value must be a prime number.");
+                    }
+                }
+                // Now ask for index value
                 Console.WriteLine("Please input the index value for the Van der Corput sequence.");
                 van.Index = Convert.ToInt32(Console.ReadLine());
             }
